@@ -1,0 +1,62 @@
+.login-container {
+  margin-top: 5%;
+  padding: 1%;
+  background-color: rgba(204, 255, 255, 0.5);
+}
+
+form {
+  padding: 2%;
+}
+
+body {
+	  background-image: url(../img/tiny.jpg);
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  background-color: #cccccc;
+	  font-family: 'Quicksand', sans-serif;
+	}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	body {
+	  background-image: url(../img/small.jpg);
+	  background-color: #cccccc;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 936px) { 
+	body {
+	  background-image: url(../img/medium.jpg);
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	body {
+	  background-image: url(../img/large.jpg);
+	  background-color: #cccccc;
+	}
+}
+
+.page-header {
+	background-color: rgba(204, 255, 255, 0.5);
+}
+
+.bg-debug {
+	background-color: red
+}
+
+.cleartext {
+	color: white;
+	text-shadow:2px 2px 5px black, 2px -2px 5px black,-2px 2px 5px black,-2px -2px 5px black;
+}
+
+div.clear {
+	clear: none;
+}
+
+.right-align {
+	float: right;
+}
+

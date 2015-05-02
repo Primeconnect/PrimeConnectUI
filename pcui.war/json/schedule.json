@@ -1,0 +1,21 @@
+{
+   "result": [
+   	{
+			"firstName" : "Bruce",
+			"lastName" : "Wayne",
+			"profession" : "CEO",
+			"startTime"  : 1432564200000,
+			"endTime"  : 1432573200000
+	},
+		{
+			"firstName" : "Dick",
+			"lastName" : "Grayson",
+			"profession" : "Circus Performer",
+			"phone" : "1234567890",
+			"startTime"  : 1429997400000,
+			"endTime"  : 1430001000000
+		}
+   ],
+   "sucessful": true,
+   "resultError": null
+}

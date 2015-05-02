@@ -1,0 +1,11 @@
+{
+   "result": {
+      "status": "A",
+      "userName": "BATMAN",
+      "firstName": "Bruce",
+      "lastName": "wayne",
+      "email": "batman@wayne",
+   },
+   "sucessful": true,
+   "resultError": null
+}

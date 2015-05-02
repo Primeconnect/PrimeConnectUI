@@ -1,0 +1,45 @@
+{
+   "result": [
+   	{
+			"firstName" : "Bruce",
+			"lastName" : "Wayne",
+			"profession" : "CEO",
+			"phone" : "(123) 456-7890",
+			"address" : {
+				"line1" : "157 E 72nd St ",
+				"city" : "New York",
+				"state" : "NY",
+				"country" : "USA",
+				"zip" : 88888
+			} 
+		},
+		{
+			"firstName" : "Dick",
+			"lastName" : "Grayson",
+			"profession" : "Circus Performer",
+			"phone" : "(123) 456-7890",
+			"address" : {
+				"line1" : "157 E 72nd St ",
+				"city" : "New York",
+				"state" : "NY",
+				"country" : "USA",
+				"zip" : 88888
+			} 
+		},
+		{
+			"firstName" : "Babara",
+			"lastName" : "Gordon",
+			"profession" : "Student",
+			"phone" : "(123) 456-7890",
+			"address" : {
+				"line1" : "157 E 72nd St ",
+				"city" : "New York",
+				"state" : "NY",
+				"country" : "USA",
+				"zip" : 88888
+			} 
+		}
+   ],
+   "sucessful": true,
+   "resultError": null
+}
