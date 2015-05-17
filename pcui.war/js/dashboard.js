@@ -10,7 +10,7 @@ var app = angular.module('batsDashboard', []);
 	//$scope.professionals = getDoctors();
 	
 	$scope.getDoctors = function() {
-		$http.get('/bootstrap/json/doctors.json').
+		$http.get('/pcservice/rest/login/google?email=chetancmehta@gmail.com').
 		  success(function(data, status, headers, config) {
 		    // this callback will be called asynchronously
 		    // when the response is available
@@ -23,7 +23,7 @@ var app = angular.module('batsDashboard', []);
 	};
 	
 	$scope.getSchedules = function() {
-		$http.get('/bootstrap/json/schedule.json').
+		$http.get('/pcservice/rest/schedule?email=chetancmehta@gmail.com').
 		  success(function(data, status, headers, config) {
 		    // this callback will be called asynchronously
 		    // when the response is available
