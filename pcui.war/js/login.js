@@ -24,7 +24,7 @@ app.controller('validateLoginCtrl', function($scope) {
 	$scope.googleLogin = function() {
 		
 		gapi.auth.authorize({
-			client_id: '1023346956120-vkk31f9as9dlolqsqo85fba2iri3falq.apps.googleusercontent.com', 
+			client_id: '214597425275-51mqu7481m0496nlp8t8l3hn6j7dthan.apps.googleusercontent.com', 
 			scope: 'https://www.googleapis.com/auth/plus.me', 
 			immediate: false
 		}, $scope.handleAuthResult);
