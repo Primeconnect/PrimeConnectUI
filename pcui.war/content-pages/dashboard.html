@@ -1,7 +1,7 @@
 <section class="col-xs-12" >
 		<div class="row" >
 				<div class="col-xs-12" style="padding:5px;">
-					<h1 class="cleartext" style="display:inline">Welcome Thrillhouse!!!</h1>
+					<h1 class="cleartext" style="display:inline">Welcome {{displayName}}!!!</h1>
 					<button class="btn btn-danger btn-lg right-align" ng-click="logout()">Logout</button>
 				</div>
 		</div>
@@ -20,7 +20,7 @@
 						    		<span>{{ p.address.line2 }} </span> <br>
 						    	</div>
 						    	<span>{{ p.address.city + " " + p.address.state + ", " + p.address.zip }} </span> <br>
-						    	<span><strong>Tel:</strong> {{ p.phone }} </span>
+						    	<span><strong>Tel:</strong> {{ p.phoneNumber }} </span>
 						    </p>
 						  </a>
 						</div>

@@ -2,15 +2,17 @@
 
 var app = angular.module('batsDashboard', []);
 
- app.controller('dashboardCtrl', function($scope,$http) {
+ app.controller('dashboardCtrl', ['$scope','$http','profileService',function($scope,$http,profileService) {
 	$scope.logout = function() {
 		$scope.$emit('logout');
 	};
 	
+	$scope.displayName = profileService.profile.firstName + ' ' + profileService.profile.lastName;
+
 	//$scope.professionals = getDoctors();
 	
 	$scope.getDoctors = function() {
-		$http.get('/bootstrap/json/doctors.json').
+		$http.get('json/doctors.json').
 		  success(function(data, status, headers, config) {
 		    // this callback will be called asynchronously
 		    // when the response is available
@@ -23,7 +25,7 @@ var app = angular.module('batsDashboard', []);
 	};
 	
 	$scope.getSchedules = function() {
-		$http.get('/bootstrap/json/schedule.json').
+		$http.get('json/schedule.json').
 		  success(function(data, status, headers, config) {
 		    // this callback will be called asynchronously
 		    // when the response is available
@@ -38,4 +40,4 @@ var app = angular.module('batsDashboard', []);
 	$scope.getDoctors();
 	$scope.getSchedules();
 	
-});
+}]);

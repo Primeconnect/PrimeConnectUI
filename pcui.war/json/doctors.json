@@ -4,7 +4,7 @@
 			"firstName" : "Bruce",
 			"lastName" : "Wayne",
 			"profession" : "CEO",
-			"phone" : "(123) 456-7890",
+			"phoneNumber" : "(123) 456-7890",
 			"address" : {
 				"line1" : "157 E 72nd St ",
 				"city" : "New York",
@@ -17,7 +17,7 @@
 			"firstName" : "Dick",
 			"lastName" : "Grayson",
 			"profession" : "Circus Performer",
-			"phone" : "(123) 456-7890",
+			"phoneNumber" : "(123) 456-7890",
 			"address" : {
 				"line1" : "157 E 72nd St ",
 				"city" : "New York",
@@ -30,7 +30,7 @@
 			"firstName" : "Babara",
 			"lastName" : "Gordon",
 			"profession" : "Student",
-			"phone" : "(123) 456-7890",
+			"phoneNumber" : "(123) 456-7890",
 			"address" : {
 				"line1" : "157 E 72nd St ",
 				"city" : "New York",
