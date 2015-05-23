@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="col-xs-12" >
 		<div class="row" >
 				<div class="col-xs-12" style="padding:5px;">
@@ -41,4 +42,49 @@
 			</div>
 		</div>
 		
+=======
+<section class="col-xs-12" >
+		<div class="row" >
+				<div class="col-xs-12" style="padding:5px;">
+					<h1 class="cleartext" style="display:inline">Welcome Thrillhouse!!!</h1>
+					<button class="btn btn-danger btn-lg right-align" ng-click="logout()">Logout</button>
+				</div>
+		</div>
+		<div class="row" >
+			<div class="col-xs-12 col-md-6">
+				<div class="panel panel-info">
+					  <div class="panel-heading">
+					    <h2 class="panel-title" style="font-size: 2em;">Doctors</h2>
+					  </div>
+						<div class="list-group panel-body">
+						  <a href="javascript:void(0);" class="list-group-item" ng-repeat="p in professionals">
+						    <h3 class="list-group-item-heading">{{ p.firstName + " " + p.lastName + ","  + p.profession }}</h3>
+						    <p class="list-group-item-text">
+						    	<span>{{ p.address.line1 }} </span> <br>
+						    	<div ng-show="{{p.address.line2}}">
+						    		<span>{{ p.address.line2 }} </span> <br>
+						    	</div>
+						    	<span>{{ p.address.city + " " + p.address.state + ", " + p.address.zip }} </span> <br>
+						    	<span><strong>Tel:</strong> {{ p.phoneNumber }} </span>
+						    </p>
+						  </a>
+						</div>
+					</div>
+			</div>
+			<div class="col-xs-12 col-md-6" >
+				<div class="panel panel-info">
+					  <div class="panel-heading">
+					    <h2 class="panel-title" style="font-size: 2em;">Schedules</h2>
+					  </div>
+						<div class="list-group panel-body">
+						  <a href="javascript:void(0);" class="list-group-item" ng-repeat="s in schedules">
+						    <span>{{ s.firstName + " " + s.lastName + ","  + s.profession }}</span> 
+						    <span class="right-align">{{ s.startTime | date : 'EEE MMM dd, yyyy h:mm a'}} - {{ s.endTime | date : 'h:mm a'}} </span>
+						  </a>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+>>>>>>> branch 'master' of https://github.com/Primeconnect/PrimeConnectUI.git
 </section>
