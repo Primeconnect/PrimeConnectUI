@@ -2,7 +2,7 @@
 
 var app = angular.module('batsDashboard', []);
 
- app.controller('dashboardCtrl', ['$scope','$http','profileService',function($scope,$http,profileService) {
+ app.controller('dashboardCtrl', ['$scope','$http','profileService','restService',function($scope,$http,profileService,restService) {
 	$scope.logout = function() {
 		$scope.$emit('logout');
 	};
@@ -11,33 +11,24 @@ var app = angular.module('batsDashboard', []);
 
 	//$scope.professionals = getDoctors();
 	
-	$scope.getDoctors = function() {
-		$http.get('json/doctors.json').
-		  success(function(data, status, headers, config) {
-		    // this callback will be called asynchronously
-		    // when the response is available
-		    $scope.professionals = data.result;
-		  }).
-		  error(function(data, status, headers, config) {
-		    // called asynchronously if an error occurs
-		    // or server returns response with an error status.
-		  });
+	$scope.getDoctors = function(email) {
+		var promise = restService.getDoctor(profileService.profile.email);
+		promise.then( function(data,status,headers) {
+			$scope.professionals = data.result;
+		});
+
 	};
 	
-	$scope.getSchedules = function() {
-		$http.get('json/schedule.json').
-		  success(function(data, status, headers, config) {
-		    // this callback will be called asynchronously
-		    // when the response is available
-		    $scope.schedules = data.result;
-		  }).
-		  error(function(data, status, headers, config) {
-		    // called asynchronously if an error occurs
-		    // or server returns response with an error status.
-		  });
+	$scope.getSchedules = function(email) {
+		var promise = restService.getSchedule(profileService.profile.email);
+		promise.then( function(data,status,headers) {
+			$scope.schedules = data.result;
+		});
 	};
 	
-	$scope.getDoctors();
-	$scope.getSchedules();
+	var email = profileService.profile.email;
+
+	$scope.getDoctors(email);
+	$scope.getSchedules(email);
 	
 }]);
