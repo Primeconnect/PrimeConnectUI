@@ -1,9 +1,62 @@
 <section class="col-xs-12" >
-		<div class="row" >
-				<div class="col-xs-12" style="padding:5px;">
-					<h1 class="cleartext" style="display:inline">Please Sign Up!!!!</h1>
-					<button class="btn btn-danger btn-lg right-align" ng-click="logout()">Logout</button>
-				</div>
+	<div class="row" >
+		<div class="col-xs-12" style="padding:5px;">
+			<h1 class="cleartext" style="display:inline">Please Sign Up!!!!</h1>
+			<button class="btn btn-danger btn-lg right-align" ng-click="logout()">Logout</button>
 		</div>
-		
+	</div>
+	<div class="row" >
+		<form name="signUpForm" novalidate>
+			<div id="owl-example" class="owl-carousel panel panel-info">
+	      
+		        <div>
+		        	<div class="panel-body">
+		        		<h3>What kind of user are you?</h3>
+		            	<div class="radio">
+						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;"><input type="radio" name="userradio">Client</label>
+						  <label style="font-style: italic;">( Client requiring service from professional )</label>
+						</div>
+						<div class="radio">
+						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;"><input type="radio" name="userradio">Professional</label>
+						  <label style="font-style: italic;">( i.e. Doctor, Accountant, etc )</label>
+						</div>
+						<div class="radio">
+						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;"><input type="radio" name="userradio">Client & Professional</label>
+						  <label style="font-style: italic;">( Is both a Client and Professional )</label>
+						</div>
+		            </div>
+		        </div>
+
+		        <div>
+		        	<div class="panel-body">
+			            <h3>Death</h3>
+			            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+			         </div>
+		        </div>
+		      
+		        <div>
+		        	<div class="panel-body">
+			            <h3>Flowers</h3>
+			            <p>Beatiful flowers in Kolymbari, Crete.</p>
+			        </div>
+		        </div>
+
+		        <div>
+		        	<div class="panel-body">
+			            <h3>Life</h3>
+			            <p>Beatiful flowers in Kolymbari, Crete.</p>
+			        </div>
+		        </div>
+
+		    </div>
+		</form>
+	</div>	
+	<div class="row" >
+		<div class="col-xs-12">
+			<button class="btn btn-primary " ng-click="back()">Back</button>
+			<button class="btn btn-primary " ng-click="next()">Next</button>
+			<button type="submit" form="signUpForm" class="btn btn-primary " ng-click="submit()">Submit</button>
+			<button class="btn btn-danger" form="signUpForm" ng-disabled="signUpForm.$invalid" ng-click="logout()">Cancel</button>
+	    </div>
+	</div>
 </section>

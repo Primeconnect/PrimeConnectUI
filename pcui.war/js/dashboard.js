@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('batsDashboard', []);
+var app = angular.module('batsDashboard', ['profileModule']);
 
  app.controller('dashboardCtrl', ['$scope','$http','profileService',function($scope,$http,profileService) {
 	$scope.logout = function() {
