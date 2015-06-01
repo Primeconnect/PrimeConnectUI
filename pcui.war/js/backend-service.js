@@ -4,7 +4,7 @@ var app = angular.module('batendModule', []);
 
 app.factory('restService', ['$http','$q',function($http,$q) {
    
-	var baseRestUrl = "http://localhost:8080/pcservice/rest";
+	var baseRestUrl = "/pcservice/rest";
 
 	var instance = {};
 
@@ -22,6 +22,7 @@ app.factory('restService', ['$http','$q',function($http,$q) {
 		var deferred = $q.defer();
 	    $http.get(url)
 	      .success( function(response,status,header) {
+	      	//console.log(response);
 	      	if( response.successful )
 	      		deferred.resolve(response);
 	      	else
@@ -35,7 +36,17 @@ app.factory('restService', ['$http','$q',function($http,$q) {
 
 	//specific service methods
 	instance.getProfile = function(email) {
-    	var url = baseRestUrl+'/dummy?email='+email;
+    	var url = baseRestUrl+'/login/profiledata?email='+email;
+	    return this.callGetService(url);
+    };
+
+    instance.getDoctor = function(email) {
+    	var url = baseRestUrl+'/login/google?email='+email;
+	    return this.callGetService(url);
+    };
+
+    instance.getSchedule = function(email) {
+    	var url = baseRestUrl+'/schedule?email='+email;
 	    return this.callGetService(url);
     };
 
