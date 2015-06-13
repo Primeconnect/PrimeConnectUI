@@ -49,10 +49,10 @@ app.controller('pageFlowCtrl',
     });
     
     
-//    if( !$scope.$loggedIn )
-    	//$location.path('/login');
-    //else
-    	//$location.path('/dashboard');
+    if( !$scope.$loggedIn )
+    	$location.path('/login');
+    else
+    	$location.path('/dashboard');
     
     
   }]);

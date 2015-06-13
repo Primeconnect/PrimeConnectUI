@@ -2,7 +2,7 @@
 
 //for initial
 function googleSetup() {
-  gapi.client.setApiKey('AIzaSyBmfyJFeowU_jdSz_O5_rNTZD1JVBLY5QU');
+  gapi.client.setApiKey('AIzaSyABAKKf9paqXfNKG7DsrvWKJiD4tybuYyg');
 }
 
 var app = angular.module('batsLogin',['batsPageFlow','ngCookies']);
@@ -39,7 +39,7 @@ app.controller('validateLoginCtrl', ['$scope','profileService',function($scope,p
 	$scope.googleLogin = function() {
 		
 		gapi.auth.authorize({
-			client_id: '1023346956120-vkk31f9as9dlolqsqo85fba2iri3falq.apps.googleusercontent.com', 
+			client_id: '214597425275-51mqu7481m0496nlp8t8l3hn6j7dthan.apps.googleusercontent.com', 
 			scope: 'email', 
 			immediate: false
 		}, function(token) {	
