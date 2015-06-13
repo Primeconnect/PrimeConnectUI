@@ -31,7 +31,9 @@ app.controller('pageFlowCtrl',
         //var email = event.targetScope.email;
         //profileService.populateProfile(email);
 
-        //console.log(profileService.profile);
+        profileService.loggedInEmail = event.targetScope.email;
+
+        //console.log(email);
 
         if( profileService.isProfileAvail() )
     	   $location.path('/dashboard');
@@ -46,12 +48,12 @@ app.controller('pageFlowCtrl',
     	$location.path('/login');
     });
     
-    /*
-    if( !$scope.$loggedIn )
-    	$location.path('/login');
-    else
-    	$location.path('/dashboard');
-    */
+    
+//    if( !$scope.$loggedIn )
+    	//$location.path('/login');
+    //else
+    	//$location.path('/dashboard');
+    
     
   }]);
   

@@ -36,17 +36,17 @@ app.factory('restService', ['$http','$q',function($http,$q) {
 
 	//specific service methods
 	instance.getProfile = function(email) {
-    	var url = baseRestUrl+'/login/profiledata?email='+email;
+    	var url = baseRestUrl+'/dummy/user?email='+email;
 	    return this.callGetService(url);
     };
 
     instance.getDoctor = function(email) {
-    	var url = baseRestUrl+'/login/google?email='+email;
+    	var url = baseRestUrl+'/dummy/professional?email='+email;
 	    return this.callGetService(url);
     };
 
     instance.getSchedule = function(email) {
-    	var url = baseRestUrl+'/schedule?email='+email;
+    	var url = baseRestUrl+'/dummy/schedule?email='+email;
 	    return this.callGetService(url);
     };
 

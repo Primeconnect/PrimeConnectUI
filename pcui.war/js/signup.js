@@ -2,17 +2,24 @@
 
 var app = angular.module('batsSignup', ['profileModule']);
 
- app.controller('signupCtrl', ['$scope','$http','profileService',function($scope,$http,profileService) {
+ app.controller('signupCtrl', ['$scope','$http','profileService','$document',function($scope,$http,profileService,$document) {
 	$scope.logout = function() {
 		$scope.$emit('logout');
 	};
+
+	$scope.email = profileService.loggedInEmail;
+	console.log(profileService);
+
+	$scope.isProfessional = true;
 	
 	var initOwl = function() {
 
-		$scope.owl = $(".owl-carousel");
+		$document.ready(function() {
+			$scope.owl = $(".owl-carousel");
 
-		$scope.owl.owlCarousel({
-			singleItem:true
+			$scope.owl.owlCarousel({
+				singleItem:true
+			});
 		});
 
 	};

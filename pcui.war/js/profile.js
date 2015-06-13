@@ -31,6 +31,8 @@ app.factory('profileService', ['restService',function(restService) {
 		promise.then( function(response) {
 			var profile = response.result;
 
+			console.log(profile);
+
 			if( !isVariableBlank(profile) ) {
 				instance.profile.firstName = profile.firstName;
 				instance.profile.lastName = profile.lastName;
