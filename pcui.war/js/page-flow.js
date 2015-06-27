@@ -40,6 +40,10 @@ app.controller('pageFlowCtrl',
         else
             $location.path('/signup');
     });
+
+    $scope.$on('signin',function(event){
+        $location.path('/dashboard');
+    });
     
     $scope.$on('logout',function(){
     	$scope.$loggedIn = false;

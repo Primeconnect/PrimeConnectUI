@@ -73,9 +73,13 @@ var app = angular.module('batsSignup', ['profileModule','batendModule']);
 	initOwl();
 
 	$scope.submit = function() {
-		console.log($scope);
+		//console.log($scope);
 		
-		restService.createProfile($scope.signupFormData);
+		var promise = restService.createProfile($scope.signupFormData);
+		promise.then( function() {
+			console.log("saved")
+			$scope.$emit('signin');
+		});
 
 	};
 

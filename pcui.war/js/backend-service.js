@@ -34,12 +34,23 @@ app.factory('restService', ['$http','$q',function($http,$q) {
 	      return deferred.promise;
 	};
 
-	instance.callPutService = function(url,data) {
-		console.log(url);
-		console.log(data);
+	instance.callPutService = function(serviceUrl,params) {
+		console.log(serviceUrl);
+		console.log(params);
 
 		var deferred = $q.defer();
-	    $http.put(url,data)
+	    $http({
+		    method: "PUT",
+		    url: 'http://localhost:8080/pcservice/rest/register/generic',
+		    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+		    data: params,
+		    transformRequest: function(obj) {
+		        var str = [];
+		        for(var p in obj)
+		        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+		        return str.join("&");
+		    }
+		})
 	      .success( function(response,status,header) {
 	      	//console.log(response);
 	      	if( response.successful )
@@ -97,7 +108,7 @@ app.factory('restService', ['$http','$q',function($http,$q) {
 	    addFormValueToObject(formData,'billingAddressZip',param);
 	    addFormValueToObject(formData,'billingAddressCountry',param);
 
-	    return this.callPutService('/register/generic',param);
+	    return this.callPutService(url,param);
 
     };
 
