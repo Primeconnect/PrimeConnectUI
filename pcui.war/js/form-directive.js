@@ -3,34 +3,42 @@
 var app = angular.module('batsForm', []);
 
  app.directive('batFormTextbox', function() {
- 	var directive = {};
+    return {
+        restrict : 'E',
 
- 	directive.restrict = 'E';
- 	directive.scope = true;
- 	
-    directive.controller = function( $scope, $element, $attrs, $transclude ) {
-    	console.log( ' (controller)'  );
-        console.log( $attrs );
-        
-        $scope.id = $attrs.id;
-        $scope.label = $attrs.label;
-        $scope.required = $attrs.required;
+        template: function(element, attrs) {
+            var requiredLabel = ( attrs.hasOwnProperty('required') ? ' <span style="color:red">*</span>' : '');
+            var requiredDirective = ( attrs.hasOwnProperty('required') ? ' required ' : '');
+
+            var html = '<div class="form-group">' +
+                            '<label for="'+attrs.id+'" class="col-sm-3 control-label">'+attrs.label+requiredLabel+' </label>' +
+                            '<div class="col-sm-9">' +
+                                '<input type="text" class="form-control" id="'+attrs.id+'" placeholder="'+attrs.label+'" '+
+                                    ' ng-model="$parent.signupFormData.'+attrs.$normalize(attrs.id)+'" '+requiredDirective+
+                                    ' >' +
+                            '</div>' +
+                        '</div>';
+
+            return html;
+        }
     };
-    
-    
-    directive.compile =function compile( tElement, tAttributes ) {
-        console.log( ' (compile)'  );
-        return {
-            pre: function preLink( scope, element, attributes ) {
-                console.log( ' (pre-link)'  );
-            },
-            post: function postLink( scope, element, attributes ) {
-                console.log( ' (post-link)'  );
-            }
-        };
-     };
+});
 
-     directive.templateUrl = 'content-pages/template/form-textbox-tpl.html';
+ app.directive('batFormCheckbox', function() {
+    return {
+        restrict : 'E',
+        transclude: true,
 
-  	return directive;
+        template: function(element, attrs) {
+            var requiredLabel = ( attrs.hasOwnProperty('required') ? ' <span style="color:red">*</span>' : '');
+            var requiredDirective = ( attrs.hasOwnProperty('required') ? ' required ' : '');
+
+            var html = '<div><label>'+
+                '<input type="checkbox" ng-model="$parent.signupFormData.'+attrs.$normalize(attrs.model)+'" '+
+                requiredDirective+' > '+
+                ' <ng-transclude></ng-transclude>"'+requiredLabel+
+                '</label></div>';
+            return html;
+        }
+    };
 });

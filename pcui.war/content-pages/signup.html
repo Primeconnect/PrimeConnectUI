@@ -6,22 +6,28 @@
 		</div>
 	</div>
 	<div class="row" >
+		
 		<form name="signUpForm" novalidate>
 			<div id="owl-example" class="owl-carousel panel panel-info">
-	      
 		        <div>
 		        	<div class="panel-body">
 		        		<h3>What kind of user are you?</h3>
 		            	<div class="radio">
-						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;"><input type="radio" name="userradio">Client</label>
-						  <label style="font-style: italic;">( Client requiring service from professional )</label>
+							<label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;">
+								<input type="radio" name="userradio" ng-model="signupForm.userType" value="C" ng-click="reset();addClient()" required>Client
+							</label>
+							<label style="font-style: italic;">( Client requiring service from professional )</label>
 						</div>
 						<div class="radio">
-						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;"><input type="radio" name="userradio">Professional</label>
+						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;">
+						  	<input type="radio" name="userradio" ng-model="signupForm.userType" value="P" ng-click="reset();addProfessional()" required>Professional
+						  </label>
 						  <label style="font-style: italic;">( i.e. Doctor, Accountant, etc )</label>
 						</div>
 						<div class="radio">
-						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;"><input type="radio" name="userradio">Client & Professional</label>
+						  <label class="col-xs-12 col-sm-4 col-md-3 col-lg-2" style="font-weight: bold;">
+						  	<input type="radio" name="userradio" ng-model="signupForm.userType" value="B" ng-click="reset();addClient();addProfessional()" required>Client & Professional
+						  </label>
 						  <label style="font-style: italic;">( Is both a Client and Professional )</label>
 						</div>
 		            </div>
@@ -29,55 +35,32 @@
 
 		        <div>
 		        	<div class="panel-body">
-		        		<h3>Basic Profile</h3>
-		        		<bat-form-textbox id="first-name" label="First Name" required="true"></bat-form-textbox>
-		        		<bat-form-textbox id="middle-name" label="Middle Name"></bat-form-textbox>
-		        		<bat-form-textbox id="last-name" label="Last Name" required="true"></bat-form-textbox>
-		        		<bat-form-textbox id="email" label="Email" required="true"></bat-form-textbox>
-		        		<bat-form-textbox id="phone" label="Phone" required="true"></bat-form-textbox>
-		        		<bat-form-textbox id="fax" label="Fax"></bat-form-textbox>
+		        		<div ng-include="formUrl.profileDetails"></div>
+			         </div>
+		        </div>
+
+<!--
+		        <div>
+		        	<div class="panel-body">
+		        		<div ng-include="formUrl.profDetails"></div>
 			         </div>
 		        </div>
 
 		        <div>
 		        	<div class="panel-body">
-		        		<h3>Professional Details</h3>
-						<bat-form-textbox id="profession" label="Profession" required="true"></bat-form-textbox>
-						<bat-form-textbox id="sub-profession" label="Sub Profession"></bat-form-textbox>
-						<bat-form-textbox id="location-name" label="Location Name" required="true"></bat-form-textbox>
-						<bat-form-textbox id="line1" label="Line1" required="true"></bat-form-textbox>
-						<bat-form-textbox id="line2" label="Line2"></bat-form-textbox>
-						<bat-form-textbox id="city" label="City" required="true"></bat-form-textbox>
-						<bat-form-textbox id="state" label="State" required="true"></bat-form-textbox>
-						<bat-form-textbox id="zip" label="Zip" required="true"></bat-form-textbox>
-						<bat-form-textbox id="country" label="Country" required="true"></bat-form-textbox>
-			         </div>
+		        		<div ng-include="formUrl.clientDetails"></div>
+			        </div>
 		        </div>
-
-		        <div>
-		        	<div class="panel-body">
-		        		<h3>Client Details</h3>
-						<bat-form-textbox id="profession" label="Profession" required="true"></bat-form-textbox>
-						<bat-form-textbox id="sub-profession" label="Sub Profession"></bat-form-textbox>
-						<bat-form-textbox id="location-name" label="Location Name" required="true"></bat-form-textbox>
-						<bat-form-textbox id="line1" label="Line1" required="true"></bat-form-textbox>
-						<bat-form-textbox id="line2" label="Line2"></bat-form-textbox>
-						<bat-form-textbox id="city" label="City" required="true"></bat-form-textbox>
-						<bat-form-textbox id="state" label="State" required="true"></bat-form-textbox>
-						<bat-form-textbox id="zip" label="Zip" required="true"></bat-form-textbox>
-						<bat-form-textbox id="country" label="Country" required="true"></bat-form-textbox>
-			         </div>
-		        </div>
-
+-->
 		    </div>
 		</form>
-	</div>	
+	</div>
 	<div class="row" >
 		<div class="col-xs-12">
 			<button class="btn btn-primary " ng-click="back()">Back</button>
 			<button class="btn btn-primary " ng-click="next()">Next</button>
-			<button type="submit" form="signUpForm" class="btn btn-primary " ng-click="submit()">Submit</button>
-			<button class="btn btn-danger" form="signUpForm" ng-disabled="signUpForm.$invalid" ng-click="logout()">Cancel</button>
+			<button type="submit" form="signUpForm" class="btn btn-primary" ng-disabled="signUpForm.$invalid" ng-click="submit()">Submit</button>
+			<button class="btn btn-danger" ng-click="logout()">Cancel</button>
 	    </div>
 	</div>
 </section>
